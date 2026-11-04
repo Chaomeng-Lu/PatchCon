@@ -26,6 +26,28 @@ The contrastive component uses the following pair types:
 
 ![PatchCon_architecture](<PatchCon_Architecture.png>)
 
+## Main Results
+
+Overall performance on the PairVul-Linux test set (Table 1 of the paper). PACC (Pairwise Accuracy) is the proportion of vulnerable–patched pairs in which the vulnerable function is predicted as vulnerable and its patched version as safe; MCG (Mean Confidence Gap) is the average difference between the predicted vulnerability probabilities of the vulnerable function and its patched version. Pair: uses vulnerable–patched function pairs (for Vul-RAG, to build its knowledge base); PW: patch-pair weighting; InfoNCE, Triplet, NT-Xent, and SupCon also denote the contrastive loss types.
+
+| Approach | Backbone | Contrastive type | Pair | PW | ACC | Precision | MCC | AUPRC | PACC | MCG |
+|---|---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| UniXcoder | UniXcoder | × | × | × | 0.5023 | 0.5012 | 0.0482 | 0.5355 | 0.0046 | 0.0024 |
+| GraphCodeBERT | GraphCodeBERT | × | × | × | 0.5069 | 0.5035 | 0.0486 | 0.5363 | 0.0185 | 0.0076 |
+| CodeBERT | CodeBERT | × | × | × | 0.5174 | 0.5096 | 0.0596 | 0.5329 | 0.0486 | 0.0035 |
+| ContraBERT | CodeBERT | InfoNCE | × | × | 0.5150 | 0.5096 | 0.0364 | 0.5312 | 0.0671 | 0.0026 |
+| ReVeal<sup>a</sup> | GNN | Triplet | × | × | 0.5024 | 0.5017 | 0.0052 | 0.5022 | 0.0481 | 0.0000 |
+| SCL-CVD | CodeBERT | SupCon | × | × | 0.5544 | 0.5540 | 0.1088 | 0.5561 | 0.1505 | 0.0271 |
+| DELTA | CodeBERT | SimCLR NT-Xent | ✓ | × | 0.5729 | 0.5609 | 0.1487 | 0.5786 | 0.2060 | 0.0855 |
+| Vul-RAG<sup>b</sup> | GPT-4o | × | ✓ | × | 0.5974 | 0.6004 | 0.1950 | – | 0.2923 | – |
+| **PatchCon** | CodeBERT | Weighted SupCon | ✓ | ✓ | **0.6030** | **0.6018** | **0.2060** | **0.6239** | **0.3264** | **0.1838** |
+
+<sup>a</sup> Graph construction failed for 16 of the 432 test pairs, so ReVeal is evaluated on the remaining 416 pairs.
+
+<sup>b</sup> Computed from the per-sample outputs released by the authors of Vul-RAG for 585 of the 586 pairs in its own test split, with undetermined answers counted as incorrect; AUPRC and MCG cannot be computed from its binary outputs.
+
+The PatchCon row can be recomputed with `python analysis/metrics.py results/pairvul_linux/patchcon.csv`. The baselines were run with the code released by their authors (see [Baselines](#baselines)).
+
 ## Directory Structure
 
 ```text
