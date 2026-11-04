@@ -1,0 +1,26 @@
+train_csv: ../data/linux/linux_train.csv
+val_csv: ../data/linux/linux_val.csv
+test_csv: ../data/linux/linux_test.csv
+# test_csv: ../data/ventivul/ventivul_linux_pairs.csv   # VentiVul (RQ6)
+
+batch_size: 16
+epochs: 10
+patience: 3
+lr: 2e-5
+temperature: 0.07
+checkpoint_path: saved_models/best_model.pt
+
+alpha_supcon: 0.01          # lambda, weight of the patch-aware SupCon loss
+alpha_single: 1             # weight of the function-level classification loss
+
+use_supcon: true
+use_cls: false              # optional pair-classification loss; not used in the paper (the trainer default is true)
+use_single: true
+verbose: 1
+
+max_pairs_per_type: 5000
+max_pairs_per_type_val: 500
+
+balance_cls_pairs: false    # setting used for the reported results (the code default is true)
+balance_all_pairs: false
+seed: 42

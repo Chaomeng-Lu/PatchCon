@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# model checkpoints (the trained model is on figshare, see README)
+*.pt
+*.bin
+*.pth
+
+# caches written by the code
+.cache_splits/
+
+# OS
+.DS_Store
+Thumbs.db

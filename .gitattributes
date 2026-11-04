@@ -1,0 +1,2 @@
+# keep every file byte-identical to the figshare release (no line-ending conversion)
+* -text

@@ -1,0 +1,23 @@
+file,configuration,paper,log,ACC,Precision,MCC,AUPRC,PACC,MCG
+pairvul_linux/patchcon.csv,"full PatchCon: CodeBERT, MP size 2048, lambda=0.01, w_p=2",Table 1 & 2 (PatchCon); Table 3 (full model); Table 6 (w_p=2); Table 7 (2048); Tables 8 & 10; RQ2; RQ4,patchcon/logs/train_test.log,0.603,0.6018,0.206,0.6239,0.3264,0.1838
+pairvul_linux/pair_codebert.csv,"pair input, no MP, no SupCon",Table 3 (PairCodeBERT),,0.5197,0.5206,0.0394,0.5382,0.0903,0.0176
+pairvul_linux/pair_codebert_mp.csv,"pair input + MP, no SupCon",Table 3 (PairCodeBERT + MP); Table 4 (CodeBERT w/o SupCon),,0.5729,0.5897,0.1485,0.5981,0.2384,0.131
+pairvul_linux/patchcon_wp1.csv,"unweighted SupCon (w_p=1), lambda=0.01",Table 3 (PairCodeBERT + SupCon); Table 6 (w_p=1); Table 10 text,pairvul_linux/logs/patchcon_wp1.log,0.5706,0.584,0.143,0.6367,0.2708,0.1499
+pairvul_linux/patchcon_wo_mp.csv,"w_p=2, lambda=0.01, single 512-token chunk",Table 3 (w/o MP); Table 7 (512); Table 10 text,pairvul_linux/logs/patchcon_wo_mp.log,0.5463,0.5629,0.096,0.5614,0.1551,0.0561
+pairvul_linux/patchcon_wo_patch_pairs.csv,without patch pairs,Table 3 (w/o patch pairs); Table 10 text,,0.5104,0.5102,0.0208,0.5298,0.0718,0.0039
+pairvul_linux/patchcon_wo_random_neg_pairs.csv,without random_neg pairs,Table 3 (w/o random_neg pairs),,0.5428,0.5437,0.0857,0.5498,0.1435,0.0187
+pairvul_linux/patchcon_wo_positive_pairs.csv,without positive pairs,Table 3 (w/o positive pairs),,0.5752,0.59,0.1525,0.6128,0.2755,0.1479
+pairvul_linux/patchcon_wp3.csv,"CodeBERT, MP size 2048, lambda=0.01, w_p=3",Table 4 (CodeBERT w/ SupCon); Table 5 (lambda=0.01); Table 6 (w_p=3),pairvul_linux/logs/patchcon_wp3.log,0.5961,0.604,0.1927,0.6208,0.3218,0.1715
+pairvul_linux/patchcon_graphcodebert_wp3.csv,"GraphCodeBERT backbone, lambda=0.01, w_p=3",Table 4 (GraphCodeBERT w/ SupCon),,0.5613,0.5556,0.1234,0.5683,0.287,0.1179
+pairvul_linux/graphcodebert_pair_mp.csv,"GraphCodeBERT backbone, pair input + MP, no SupCon",Table 4 (GraphCodeBERT w/o SupCon),,0.5058,0.5034,0.0158,0.5275,0.0671,0.005
+pairvul_linux/patchcon_unixcoder_wp3.csv,"UniXcoder backbone, lambda=0.01, w_p=3",Table 4 (UniXcoder w/ SupCon),,0.5637,0.561,0.1274,0.6006,0.2593,0.1221
+pairvul_linux/unixcoder_pair_mp.csv,"UniXcoder backbone, pair input + MP, no SupCon",Table 4 (UniXcoder w/o SupCon),,0.4977,0.4977,-0.0046,0.5384,0.0856,0.0086
+pairvul_linux/patchcon_lambda0.005_wp3.csv,"lambda=0.005, w_p=3",Table 5 (0.005),pairvul_linux/logs/patchcon_lambda0.005_wp3.log,0.5775,0.573,0.1554,0.6174,0.2639,0.1501
+pairvul_linux/patchcon_lambda0.05_wp3.csv,"lambda=0.05, w_p=3",Table 5 (0.05),pairvul_linux/logs/patchcon_lambda0.05_wp3.log,0.5938,0.5707,0.1984,0.6235,0.2917,0.1723
+pairvul_linux/patchcon_lambda0.1_wp3.csv,"lambda=0.1, w_p=3",Table 5 (0.1),pairvul_linux/logs/patchcon_lambda0.1_wp3.log,0.5463,0.5787,0.1016,0.5737,0.1458,0.0478
+pairvul_linux/patchcon_wp1.5.csv,"lambda=0.01, w_p=1.5",Table 6 (1.5),pairvul_linux/logs/patchcon_wp1.5.log,0.5764,0.5965,0.1562,0.6159,0.2616,0.1409
+pairvul_linux/patchcon_wp4.csv,"lambda=0.01, w_p=4",Table 6 (4),pairvul_linux/logs/patchcon_wp4.log,0.5451,0.5575,0.0924,0.5792,0.1736,0.0581
+pairvul_linux/patchcon_mp1024.csv,"MP size 1024, lambda=0.01, w_p=2",Table 7 (1024),pairvul_linux/logs/patchcon_mp1024.log,0.522,0.5212,0.044,0.5293,0.088,0.0054
+pairvul_linux/patchcon_mp1536.csv,"MP size 1536, lambda=0.01, w_p=2",Table 7 (1536),pairvul_linux/logs/patchcon_mp1536.log,0.5961,0.5819,0.1951,0.6124,0.2755,0.156
+ventivul/patchcon_ventivul_111pairs.csv,"full PatchCon trained on PairVul-Linux, applied without retraining",Table 9 / RQ6,,0.527,0.5238,0.0546,0.5291,0.1622,0.0324
+ventivul/patchcon_ventivul_116pairs.csv,"full PatchCon trained on PairVul-Linux, applied without retraining",RQ6 text (all 116 pairs),,0.5259,0.5221,0.0525,0.5263,0.1552,0.0341
