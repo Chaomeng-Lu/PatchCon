@@ -205,9 +205,13 @@ The code and the results in this package are released under the MIT License (see
 ## Citation
 
 ```bibtex
-@article{lu2026patchcon,
+@misc{lu2026patchcon,
   title   = {PatchCon: Patch-aware Weighted Supervised Contrastive Learning for Vulnerability Detection},
   author  = {Lu, Chaomeng and Rostami Mazrae, Pooya and Lagaisse, Bert},
   year    = {2026}
+  eprint={2611.06583},
+  archivePrefix={arXiv},
+  primaryClass={cs.SE},
+  url={https://arxiv.org/abs/2611.06583}, 
 }
 ```
